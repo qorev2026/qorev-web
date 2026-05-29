@@ -71,8 +71,8 @@
   }
   .btn-primary:hover { background: #009CB0; }
   .btn-secondary {
-    font-family: var(--heading); font-size: 14px; font-weight: 600;
-    background: transparent; color: var(--muted); padding: 14px 28px;
+    font-family: var(--heading); font-size: 13px; font-weight: 500;
+    background: transparent; color: var(--muted); padding: 12px 22px;
     border: 1.5px solid #C8DDE4; cursor: pointer; border-radius: 4px;
     transition: border-color 0.2s, color 0.2s;
   }
@@ -229,8 +229,8 @@
     <h1>Tu estación.<br><em>Gestionada sola.</em><br>Sin caos.</h1>
     <p class="hero-sub">Qorev automatiza el acceso y la rotación de tus puntos de carga. Sin intervención humana, sin conflictos entre usuarios, sin cargadores parados innecesariamente.</p>
     <div class="hero-actions">
-      <button class="btn-primary" onclick="document.getElementById('contacto').scrollIntoView({behavior:'smooth'})">Quiero un piloto</button>
-      <button class="btn-secondary" onclick="document.getElementById('como-funciona').scrollIntoView({behavior:'smooth'})">Ver cómo funciona</button>
+      <button class="btn-primary" onclick="document.getElementById('contacto').scrollIntoView({behavior:'smooth'})">Solicitar piloto</button>
+      <button class="btn-secondary" onclick="document.getElementById('como-funciona').scrollIntoView({behavior:'smooth'})">Ver demostración</button>
     </div>
   </div>
   <div class="dashboard-mock">
@@ -257,9 +257,19 @@
         <div class="charger-row"><span class="charger-name">CP-04</span><span class="badge charging">Cargando</span></div>
       </div>
     </div>
+    <div style="text-align:center;padding:8px 0 4px;font-size:11px;color:#4A6A7A;font-family:'Sora',sans-serif;letter-spacing:0.5px;">Métricas ilustrativas · Pendiente de piloto real</div>
   </div>
 </section>
 
+
+<section style="padding:40px 56px;background:var(--white);border-top:1px solid #E0ECF0;border-bottom:1px solid #E0ECF0;">
+  <div style="max-width:700px;margin:0 auto;text-align:center;">
+    <div style="display:inline-flex;align-items:center;gap:10px;background:#E6F7FA;border-radius:20px;padding:10px 24px;margin-bottom:0;">
+      <span style="width:8px;height:8px;background:#00B4C8;border-radius:50%;display:inline-block;animation:blink 2s infinite;flex-shrink:0;"></span>
+      <span style="font-family:'Sora',sans-serif;font-size:14px;color:#0D1B24;font-weight:500;">Actualmente en conversaciones con operadores de carga rápida y parkings privados en Madrid.</span>
+    </div>
+  </div>
+</section>
 <section class="pain">
   <div class="pain-header">
     <h2>El problema que nadie ha resuelto todavía</h2>
@@ -293,12 +303,12 @@
     <div class="how-card" data-n="1">
       <div class="how-tag">El conductor</div>
       <h3>Accede desde el móvil, antes de llegar</h3>
-      <p>Vía QR en la entrada o directamente desde el enlace de la estación. Sin app, sin cuenta. Puede ver el estado de los cargadores en tiempo real y entrar en cola desde cualquier sitio.</p>
+      <p>Vía QR en la entrada o desde el enlace de la estación antes de llegar. Sin app, sin cuenta. Puede ver el estado de los cargadores en tiempo real y unirse a la cola remotamente — pero entrar en cola no bloquea ningún cargador. El sistema asigna una ventana de llegada: si el conductor no aparece a tiempo, pierde el turno automáticamente.</p>
     </div>
     <div class="how-card" data-n="2">
       <div class="how-tag">El sistema</div>
       <h3>Asigna y activa automáticamente</h3>
-      <p>El cargador solo se activa cuando el sistema lo autoriza. Si el usuario no aparece en su ventana, el turno pasa al siguiente. Sin excepciones, sin intervención humana.</p>
+      <p>El cargador solo se activa cuando el sistema lo autoriza explícitamente. No es una lista de espera ni una reserva — es control total del acceso vía OCPP. Si el usuario no aparece en su ventana, el turno pasa al siguiente. Sin excepciones, sin intervención humana.</p>
     </div>
     <div class="how-card" data-n="3">
       <div class="how-tag">El operador</div>
@@ -342,6 +352,43 @@
 </section>
 
 
+
+<section style="padding:80px 56px;background:var(--white);border-top:1px solid #E0ECF0;" class="para-quien-section">
+  <style>
+    .para-quien-grid { display:grid; grid-template-columns:1fr 1fr; gap:32px; }
+    .para-quien-section { padding: 80px 56px; background: var(--white); border-top: 1px solid #E0ECF0; }
+    @media (max-width: 768px) {
+      .para-quien-grid { grid-template-columns: 1fr !important; }
+      .para-quien-section { padding: 60px 24px !important; }
+    }
+  </style>
+  <div style="max-width:800px;margin:0 auto;padding:0 4px;">
+    <div style="text-align:center;margin-bottom:48px;">
+      <h2 style="font-family:'Sora',sans-serif;font-size:28px;font-weight:700;color:var(--dark);margin-bottom:12px;letter-spacing:-0.5px;">¿Qorev es para ti?</h2>
+      <p style="font-size:16px;color:var(--muted);">No todas las estaciones tienen este problema. Qorev aporta valor donde la saturación es real.</p>
+    </div>
+    <div class="para-quien-grid">
+      <div style="background:#F0FBF4;border-radius:10px;padding:32px 28px;border:1.5px solid #A8E6BE;">
+        <div style="font-family:'Sora',sans-serif;font-size:13px;font-weight:700;color:#1A7A3A;text-transform:uppercase;letter-spacing:1px;margin-bottom:20px;">✓ Ideal para</div>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:12px;">
+          <li style="font-size:15px;color:var(--dark);display:flex;align-items:center;gap:10px;"><span style="color:#3DDC6B;font-weight:700;">→</span> Hubs de carga rápida con alta rotación</li>
+          <li style="font-size:15px;color:var(--dark);display:flex;align-items:center;gap:10px;"><span style="color:#3DDC6B;font-weight:700;">→</span> Parkings privados con cargadores propios</li>
+          <li style="font-size:15px;color:var(--dark);display:flex;align-items:center;gap:10px;"><span style="color:#3DDC6B;font-weight:700;">→</span> Flotas eléctricas en entornos cerrados</li>
+          <li style="font-size:15px;color:var(--dark);display:flex;align-items:center;gap:10px;"><span style="color:#3DDC6B;font-weight:700;">→</span> Instalaciones con demanda superior a la capacidad</li>
+        </ul>
+      </div>
+      <div style="background:#FDF4F4;border-radius:10px;padding:32px 28px;border:1.5px solid #E8BEBE;">
+        <div style="font-family:'Sora',sans-serif;font-size:13px;font-weight:700;color:#8A2020;text-transform:uppercase;letter-spacing:1px;margin-bottom:20px;">✗ No pensado para</div>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:12px;">
+          <li style="font-size:15px;color:var(--dark);display:flex;align-items:center;gap:10px;"><span style="color:#CC4444;font-weight:700;">→</span> Estaciones con ocupación habitualmente baja</li>
+          <li style="font-size:15px;color:var(--dark);display:flex;align-items:center;gap:10px;"><span style="color:#CC4444;font-weight:700;">→</span> Instalaciones sin saturación recurrente</li>
+          <li style="font-size:15px;color:var(--dark);display:flex;align-items:center;gap:10px;"><span style="color:#CC4444;font-weight:700;">→</span> Estaciones de acceso completamente libre sin gestión</li>
+          <li style="font-size:15px;color:var(--dark);display:flex;align-items:center;gap:10px;"><span style="color:#CC4444;font-weight:700;">→</span> Redes CPO públicas sin control de acceso</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 <section class="contact" id="contacto">
   <div class="contact-inner">
     <div class="contact-header">
