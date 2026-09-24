@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Qorev — Automatización de acceso para estaciones de carga EV</title>
 <meta name="description" content="Qorev automatiza la asignación, la rotación y el control de acceso en estaciones de carga EV, y registra los datos de uso real que hoy no se capturan.">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -186,7 +189,56 @@
   .data-item h3 { color: #EDF5F8; margin-bottom: 5px; }
   .data-item p { font-size: 14.5px; color: #758B99; line-height: 1.6; }
 
-  /* ---------- 04 authority ---------- */
+
+  /* ---------- 04 views (illustrations) ---------- */
+  .views-grid { margin-top: 56px; display: grid; grid-template-columns: 1.32fr 0.68fr; gap: 64px; align-items: start; }
+  .view-txt { margin-bottom: 28px; max-width: 34em; }
+  .view-txt .kicker { display: block; margin-bottom: 12px; }
+  .view-txt h3 { font-size: 20px; margin-bottom: 10px; letter-spacing: -0.02em; }
+  .view-txt p { font-size: 15.5px; color: var(--muted); line-height: 1.66; }
+  .view-txt p + p { margin-top: 10px; }
+  .view-txt .api-note { font-size: 14px; color: var(--ink-2); padding-left: 12px; border-left: 2px solid var(--cyan); margin-top: 14px; }
+  .illus-cap { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #9AAAB4; margin-top: 16px; }
+
+  .fb { background: #fff; border: 1px solid var(--hair); border-radius: 6px; overflow: hidden; box-shadow: 0 34px 60px -34px rgba(10,15,19,.28); }
+  .fb-bar { display: flex; align-items: center; gap: 6px; padding: 10px 14px; border-bottom: 1px solid var(--hair); background: #FAFBFC; }
+  .fb-bar i { width: 8px; height: 8px; border-radius: 50%; background: #D5DDE2; display: block; }
+  .fb-url { margin-left: 12px; font-family: var(--mono); font-size: 11px; color: var(--muted); background: #fff; border: 1px solid var(--hair); padding: 3px 10px; border-radius: 3px; }
+  .fb-body { padding: 22px; }
+  .fb-h { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+  .fb-h span { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+  .live { display: inline-flex; align-items: center; gap: 6px; }
+  .live::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--volt); }
+
+  .chips { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 26px; }
+  .chip { border: 1px solid var(--hair); border-radius: 3px; padding: 11px 12px; }
+  .chip b { font-family: var(--mono); font-size: 11px; font-weight: 500; color: var(--ink); display: block; margin-bottom: 7px; }
+  .st { font-size: 12.5px; color: var(--ink-2); display: flex; align-items: center; gap: 7px; }
+  .st::before { content: ''; width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+  .st.charging::before { background: var(--volt); }
+  .st.free::before { background: var(--cyan); }
+  .st.assigned::before { background: transparent; box-shadow: inset 0 0 0 1.5px var(--cyan); }
+
+  .log-row { display: grid; grid-template-columns: 50px 48px 1fr; gap: 12px; align-items: center; padding: 11px 0; border-bottom: 1px dashed var(--hair); font-size: 13px; }
+  .log-row:last-child { border-bottom: none; }
+  .log-row .t, .log-row .c { font-family: var(--mono); font-size: 11.5px; color: var(--muted); }
+  .tag { justify-self: start; font-size: 12.5px; padding: 3px 9px; border-radius: 2px; }
+  .tag.a { background: rgba(0,178,201,.10); color: var(--cyan-deep); }
+  .tag.n { background: #FFF3E0; color: #96610F; }
+  .tag.d { background: rgba(69,221,121,.15); color: #1E7440; }
+
+  .phone { width: 100%; max-width: 272px; background: var(--night); border-radius: 36px; padding: 11px; box-shadow: 0 34px 60px -30px rgba(10,15,19,.4); }
+  .ph-screen { background: #fff; border-radius: 27px; overflow: hidden; }
+  .ph-notch { width: 86px; height: 20px; background: var(--night); border-radius: 0 0 13px 13px; margin: 0 auto; }
+  .ph-body { padding: 16px 18px 22px; }
+  .ph-kick { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+  .ph-title { font-size: 18px; font-weight: 700; letter-spacing: -0.02em; margin: 4px 0 6px; }
+  .ph-live { font-size: 11.5px; color: var(--muted); margin-bottom: 12px; }
+  .ph-row { display: flex; align-items: center; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--hair); font-size: 14px; }
+  .ph-btn { width: 100%; margin-top: 18px; padding: 12px; border: none; border-radius: 3px; background: var(--cyan); color: #04090C; font-family: var(--sans); font-size: 14px; font-weight: 600; cursor: default; }
+  .ph-note { font-family: var(--mono); font-size: 10px; color: var(--muted); text-align: center; margin-top: 10px; letter-spacing: 0.06em; }
+
+  /* ---------- 05 authority ---------- */
   .auth-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 76px; align-items: start; margin-top: 12px; }
   .auth-rules { border-top: 1px solid var(--hair); }
   .auth-rule {
@@ -289,6 +341,12 @@
     .ruled-idx { font-size: 46px; }
     .ruled-row p { grid-column: 2; margin-top: 8px; }
     .auth-rule { grid-template-columns: 1fr; gap: 8px; }
+    .views-grid { grid-template-columns: 1fr; gap: 56px; }
+    .chips { grid-template-columns: repeat(2, 1fr); }
+    .fb-body { padding: 16px; }
+    .log-row { grid-template-columns: 42px 40px 1fr; gap: 8px; font-size: 12.5px; }
+    .phone { margin: 0 auto; }
+    .view-phone .illus-cap { text-align: center; }
     .auth-rule b { text-align: left; }
     .f-row { grid-template-columns: 1fr; gap: 0; }
     .lockup img { height: 34px; }
@@ -418,7 +476,6 @@
         <p>Solicitudes, asignaciones, sesiones, no-shows y reasignaciones se registran con marca temporal. El histórico operativo empieza el primer día.</p>
       </div>
     </div>
-    <p class="caps-note">El conductor accede por QR en la instalación o por enlace antes de llegar, sin app ni cuenta. Puede consultar el estado en tiempo real, pero solicitar acceso no bloquea ningún conector.</p>
   </div>
 </section>
 
@@ -469,11 +526,79 @@
   </div>
 </section>
 
+
+<section class="band alt">
+  <div class="wrap">
+    <div class="band-head">
+      <div class="kicker-line"><span class="kicker">04 / Producto</span></div>
+      <h2>Lo que ve cada uno</h2>
+      <p class="lead">El operador consulta el estado y el histórico de la instalación. El conductor sabe qué hay disponible antes de llegar.</p>
+    </div>
+
+    <div class="views-grid">
+      <div class="view-panel">
+        <div class="view-txt">
+          <span class="kicker">Operador</span>
+          <h3>Estado y registro en un solo panel</h3>
+          <p>Qué conector está libre, asignado o cargando en cada momento, y el histórico de cada evento: asignaciones, no-shows, reasignaciones y sesiones completadas.</p>
+        </div>
+
+        <div class="fb" aria-hidden="true">
+          <div class="fb-bar"><i></i><i></i><i></i><span class="fb-url">Panel del operador</span></div>
+          <div class="fb-body">
+            <div class="fb-h"><span>Conectores</span><span class="live">En tiempo real</span></div>
+            <div class="chips">
+              <div class="chip"><b>C-01</b><span class="st charging">Cargando</span></div>
+              <div class="chip"><b>C-02</b><span class="st free">Libre</span></div>
+              <div class="chip"><b>C-03</b><span class="st assigned">Asignado</span></div>
+              <div class="chip"><b>C-04</b><span class="st charging">Cargando</span></div>
+            </div>
+            <div class="fb-h"><span>Registro de eventos</span></div>
+            <div class="log-row"><span class="t">10:42</span><span class="c">C-03</span><span class="tag a">Acceso asignado</span></div>
+            <div class="log-row"><span class="t">10:50</span><span class="c">C-03</span><span class="tag n">No-show registrado</span></div>
+            <div class="log-row"><span class="t">10:50</span><span class="c">C-03</span><span class="tag a">Turno reasignado</span></div>
+            <div class="log-row"><span class="t">10:53</span><span class="c">C-01</span><span class="tag d">Sesión completada</span></div>
+          </div>
+        </div>
+        <p class="illus-cap">Ilustración conceptual</p>
+      </div>
+
+      <div class="view-phone">
+        <div class="view-txt">
+          <span class="kicker">Conductor</span>
+          <h3>Sabe qué hay libre antes de ir</h3>
+          <p>Consulta el estado de la instalación y solicita acceso por enlace o QR, sin app ni cuenta. Menos llegadas a ciegas y menos conflictos en la instalación.</p>
+          <p>Solicitar acceso no bloquea ningún conector: si no llega a tiempo, el turno pasa al siguiente.</p>
+          <p class="api-note">¿Ya tenéis app propia? Qorev se integra por API y la lógica de acceso funciona igual por debajo.</p>
+        </div>
+
+        <div class="phone" aria-hidden="true">
+          <div class="ph-screen">
+            <div class="ph-notch"></div>
+            <div class="ph-body">
+              <div class="ph-kick">Instalación</div>
+              <div class="ph-title">Parking Centro</div>
+              <div class="ph-live"><span class="live">Estado en tiempo real</span></div>
+              <div class="ph-row"><span>Conector 1</span><span class="st charging">Cargando</span></div>
+              <div class="ph-row"><span>Conector 2</span><span class="st free">Libre</span></div>
+              <div class="ph-row"><span>Conector 3</span><span class="st assigned">Asignado</span></div>
+              <div class="ph-row"><span>Conector 4</span><span class="st charging">Cargando</span></div>
+              <button class="ph-btn" tabindex="-1">Solicitar acceso</button>
+              <div class="ph-note">Sin app · sin cuenta</div>
+            </div>
+          </div>
+        </div>
+        <p class="illus-cap">Ilustración conceptual</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="band">
   <div class="wrap">
     <div class="auth-grid">
       <div>
-        <div class="kicker-line"><span class="kicker">04 / Autoridad</span></div>
+        <div class="kicker-line"><span class="kicker">05 / Autoridad</span></div>
         <h2>Las reglas no se negocian en el momento.</h2>
         <p class="lead" style="margin-top:18px;">La diferencia entre un sistema informativo y un sistema de control es si el cargador puede iniciar una sesión sin permiso. En Qorev no puede.</p>
         <p class="auth-foot">Compatible con cualquier hardware que implemente OCPP 1.6J. Sin sustituir infraestructura física.</p>
@@ -491,7 +616,7 @@
 <section class="band alt">
   <div class="wrap">
     <div class="band-head">
-      <div class="kicker-line"><span class="kicker">05 / Encaje</span></div>
+      <div class="kicker-line"><span class="kicker">06 / Encaje</span></div>
       <h2>¿Qorev es para vosotros?</h2>
       <p class="lead">No todas las instalaciones necesitan esta capa. Qorev aporta valor donde hay contención real y control directo sobre los cargadores.</p>
     </div>
@@ -527,7 +652,7 @@
 
 <section class="why">
   <div class="wrap why-in">
-    <div class="kicker-line"><span class="kicker">06 / Contexto</span></div>
+    <div class="kicker-line"><span class="kicker">07 / Contexto</span></div>
     <p class="big">La adopción del vehículo eléctrico crece más rápido que la capacidad instalada. El resultado no es falta de potencia: es falta de gestión cuando la demanda supera a la oferta.</p>
     <p class="small">La respuesta habitual del mercado es ampliar la instalación. Pero sin datos de uso real no hay forma de saber si el problema es de infraestructura o de gestión — y ampliar sin esa información es caro.</p>
   </div>
@@ -536,7 +661,7 @@
 <section class="contact" id="contacto">
   <div class="wrap contact-grid">
     <div>
-      <div class="kicker-line"><span class="kicker">07 / Contacto</span></div>
+      <div class="kicker-line"><span class="kicker">08 / Contacto</span></div>
       <h2>Analicemos vuestra instalación</h2>
       <p class="lead">Contadnos cómo se gestiona hoy el acceso cuando la demanda supera a la capacidad. Os diremos si hay pérdida de rotación medible y si Qorev aporta valor. Sin agenda de venta.</p>
       <p class="f-alt">O directamente a <a href="mailto:info@qorev.es">info@qorev.es</a></p>
